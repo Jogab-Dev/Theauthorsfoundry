@@ -742,4 +742,692 @@
 
             <div class="client-info">
               <h3>Emily Carter</h3>
-            
+              <p>Personal Development Author</p>
+            </div>
+          </div>
+
+          <div class="testimonial-stars">★ ★ ★ ★ ★</div>
+
+          <p class="testimonial-text">
+            "Professional, patient, and incredibly thorough. I received exactly
+            the kind of editorial support my book needed, and I would absolutely
+            recommend the process to another author."
+          </p>
+        </article>
+      </div>
+
+      <!-- SLIDER DOTS -->
+
+      <div class="testimonial-dots" id="testimonialDots">
+        <button
+          class="testimonial-dot active"
+          aria-label="View testimonial 1"
+          data-slide="0"
+        ></button>
+
+        <button
+          class="testimonial-dot"
+          aria-label="View testimonial 2"
+          data-slide="1"
+        ></button>
+
+        <button
+          class="testimonial-dot"
+          aria-label="View testimonial 3"
+          data-slide="2"
+        ></button>
+
+        <button
+          class="testimonial-dot"
+          aria-label="View testimonial 4"
+          data-slide="3"
+        ></button>
+
+        <button
+          class="testimonial-dot"
+          aria-label="View testimonial 5"
+          data-slide="4"
+        ></button>
+      </div>
+
+      <!-- TESTIMONIAL CTA -->
+
+      <div class="testimonial-cta">
+        <p>Your manuscript deserves the same attention.</p>
+
+        <a href="#contact">
+          LET'S WORK ON YOUR BOOK
+          <span>→</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- TESTIMONIAL SLIDER SCRIPT -->
+
+    <script>
+      const testimonialSlider = document.getElementById("testimonialSlider");
+
+      const testimonialCards = document.querySelectorAll(".testimonial-card");
+
+      const testimonialDots = document.querySelectorAll(".testimonial-dot");
+
+      /* Update the active dot when the client scrolls */
+
+      testimonialSlider.addEventListener("scroll", function () {
+        const scrollPosition = testimonialSlider.scrollLeft;
+
+        const cardWidth =
+          testimonialCards[0].offsetWidth +
+          parseInt(getComputedStyle(testimonialSlider).gap);
+
+        const currentSlide = Math.round(scrollPosition / cardWidth);
+
+        testimonialDots.forEach(function (dot, index) {
+          dot.classList.toggle("active", index === currentSlide);
+        });
+      });
+
+      /* Allow clients to click the dots */
+
+      testimonialDots.forEach(function (dot) {
+        dot.addEventListener("click", function () {
+          const slide = Number(this.dataset.slide);
+
+          testimonialCards[slide].scrollIntoView({
+            behavior: "smooth",
+            block: "nearest",
+            inline: "start",
+          });
+        });
+      });
+    </script>
+
+    <!-- JavaScript -->
+
+    
+    <!-- =========================
+     CONTACT / START PROJECT
+========================= -->
+
+    <section class="contact-section" id="contact">
+      <div class="contact-inner">
+        <span class="contact-label"> START YOUR PROJECT </span>
+
+        <h2>
+          Your Book
+          <em>Deserves to Be Finished.</em>
+        </h2>
+
+        <p class="contact-intro">
+          Have a manuscript that needs a careful editorial eye? Tell me about
+          your book, where you are in the process, and what kind of support
+          you're looking for.
+        </p>
+
+        <form
+  class="contact-form"
+  id="contactForm"
+  action="https://formspree.io/f/xqpzynkn"
+  method="POST"
+>
+
+  <div class="form-group">
+
+    <label for="name">YOUR NAME</label>
+
+    <input
+      type="text"
+      id="name"
+      name="name"
+      placeholder="Your name"
+      autocomplete="name"
+      required
+    />
+
+  </div>
+
+
+  <div class="form-group">
+
+    <label for="email">EMAIL ADDRESS</label>
+
+    <input
+      type="email"
+      id="email"
+      name="email"
+      placeholder="your@email.com"
+      autocomplete="email"
+      required
+    />
+
+  </div>
+
+
+  <div class="form-group">
+
+    <label for="service">WHAT DO YOU NEED?</label>
+
+    <select
+      id="service"
+      name="service"
+      required
+    >
+
+      <option value="" disabled selected>
+        Select a service
+      </option>
+
+      <option value="Writing">
+        Writing
+      </option>
+
+      <option value="Editing">
+        Editing
+      </option>
+
+      <option value="Beta Reading">
+        Beta Reading
+      </option>
+
+      <option value="Proofreading">
+        Proofreading
+      </option>
+
+      <option value="Publishing Support">
+        Publishing Support
+      </option>
+
+      <option value="I'm not sure yet">
+        I'm not sure yet
+      </option>
+
+    </select>
+
+  </div>
+
+
+  <div class="form-group">
+
+    <label for="message">
+      TELL ME ABOUT YOUR PROJECT
+    </label>
+
+    <textarea
+      id="message"
+      name="message"
+      rows="6"
+      placeholder="Tell me a little about your book, your current stage, and what you'd like help with..."
+      required
+    ></textarea>
+
+  </div>
+
+
+  <button
+    type="submit"
+    class="contact-submit"
+  >
+
+    SEND PROJECT INQUIRY
+
+    <span>→</span>
+
+  </button>
+
+</form>
+
+        <div class="contact-note">
+          <span></span>
+
+          <p>I typically respond to project inquiries as soon as possible.</p>
+
+          <span></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+     FAQ SECTION
+========================= -->
+
+    <section class="faq-section" id="faq">
+      <div class="faq-container">
+        <div class="faq-heading">
+          <p class="section-eyebrow">QUESTIONS & ANSWERS</p>
+
+          <h2>
+            Everything You Need
+            <span>to Know.</span>
+          </h2>
+
+          <p class="faq-intro">
+            Have questions about the process, services, or what happens after
+            you get in touch? Here are some answers to the questions authors ask
+            most often.
+          </p>
+        </div>
+
+        <div class="faq-list">
+          <!-- FAQ 01 -->
+
+          <div class="faq-item">
+            <button class="faq-question" type="button">
+              <span> What services do you offer? </span>
+
+              <span class="faq-icon">+</span>
+            </button>
+
+            <div class="faq-answer">
+              <p>
+                I offer professional writing, developmental editing, line and
+                copy editing, proofreading, beta reading, manuscript evaluation,
+                and publishing support for authors.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 02 -->
+
+          <div class="faq-item">
+            <button class="faq-question" type="button">
+              <span> Do you work with nonfiction authors? </span>
+
+              <span class="faq-icon">+</span>
+            </button>
+
+            <div class="faq-answer">
+              <p>
+                Yes. I work with nonfiction authors across different categories,
+                including self-help, personal development, memoir, Christian
+                books, business, finance, education, health and wellness, and
+                more.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 03 -->
+
+          <div class="faq-item">
+            <button class="faq-question" type="button">
+              <span> Can you preserve my writing voice? </span>
+
+              <span class="faq-icon">+</span>
+            </button>
+
+            <div class="faq-answer">
+              <p>
+                Absolutely. My goal is not to make your book sound like someone
+                else. Editing should strengthen your writing while preserving
+                your unique voice, message, and perspective.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 04 -->
+
+          <div class="faq-item">
+            <button class="faq-question" type="button">
+              <span> How does the editing process work? </span>
+
+              <span class="faq-icon">+</span>
+            </button>
+
+            <div class="faq-answer">
+              <p>
+                Every project begins with an understanding of your manuscript,
+                goals, and the type of support you need. From there, I review
+                the manuscript and recommend the appropriate editorial approach
+                before the work begins.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 05 -->
+
+          <div class="faq-item">
+            <button class="faq-question" type="button">
+              <span> How do I get a quote for my project? </span>
+
+              <span class="faq-icon">+</span>
+            </button>
+
+            <div class="faq-answer">
+              <p>
+                Simply fill out the project inquiry form and tell me about your
+                book, its current stage, approximate length, and the type of
+                support you're looking for. I'll review the details and get back
+                to you with the next steps.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 06 -->
+
+          <div class="faq-item">
+            <button class="faq-question" type="button">
+              <span> Do you offer publishing and formatting support? </span>
+
+              <span class="faq-icon">+</span>
+            </button>
+
+            <div class="faq-answer">
+              <p>
+                Yes. I can help prepare manuscripts for publication, including
+                ebook formatting, paperback and hardcover preparation, and other
+                publishing-related support.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 07 -->
+
+          <div class="faq-item">
+            <button class="faq-question" type="button">
+              <span> What if I'm not sure which service I need? </span>
+
+              <span class="faq-icon">+</span>
+            </button>
+
+            <div class="faq-answer">
+              <p>
+                That's completely fine. Tell me where you are in the writing or
+                publishing process and what you're struggling with. I'll help
+                determine which type of support would best fit your manuscript.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-bottom">
+          <p>Still have a question?</p>
+
+          <a href="#contact">
+            LET'S TALK ABOUT YOUR BOOK
+            <span>→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- ================================
+     PORTFOLIO SECTION
+================================= -->
+
+    <section class="portfolio-section" id="portfolio">
+      <div class="portfolio-container">
+        <div class="portfolio-intro">
+          <p class="portfolio-eyebrow">SELECTED WORK</p>
+
+          <h2>
+            A Glimpse of What
+            <span>We Create.</span>
+          </h2>
+
+          <p class="portfolio-description">
+            Every book deserves a thoughtful visual identity. Here's a look at
+            one of the projects created with care, purpose, and the reader in
+            mind.
+          </p>
+        </div>
+
+        <div class="featured-portfolio">
+          <!-- Book Cover -->
+          <div class="portfolio-cover">
+            <img
+    src="images/quiet-resilience.png"
+    alt="The Quiet Resilience book cover"
+>
+          </div>
+
+          <!-- Book Information -->
+          <div class="portfolio-info">
+            <p class="portfolio-category">MEMOIR • BOOK COVER DESIGN</p>
+
+            <h3>The Quiet Resilience</h3>
+
+            <p class="portfolio-subtitle">A Memoir of Strength and Survival</p>
+
+            <p class="portfolio-text">
+              A thoughtful cover concept created to reflect resilience,
+              solitude, strength, and the journey of finding hope after
+              difficult seasons.
+            </p>
+
+            <div class="portfolio-details">
+              <div>
+                <span>PROJECT</span>
+                <strong>Book Cover Design</strong>
+              </div>
+
+              <div>
+                <span>GENRE</span>
+                <strong>Memoir</strong>
+              </div>
+            </div>
+
+            <a href="portfolio.html" class="portfolio-button">
+  VIEW MORE PORTFOLIO
+  <span>→</span>
+</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- =========================
+     FOOTER
+========================= -->
+
+    <footer class="site-footer">
+
+  <div class="footer-container">
+
+    <!-- Footer Brand -->
+
+    <div class="footer-brand">
+
+      <a href="index.html" class="footer-logo">
+
+        THE AUTHOR'S
+
+        <span>FOUNDRY</span>
+
+      </a>
+
+
+      <p>
+        Professional writing, editing, beta reading, and publishing support
+        for authors ready to bring their books to life.
+      </p>
+
+
+      <a href="index.html#contact" class="footer-cta">
+
+        LET'S WORK ON YOUR BOOK
+
+        <span>→</span>
+
+      </a>
+
+    </div>
+
+
+
+    <!-- Quick Links -->
+
+    <div class="footer-column">
+
+      <h3>EXPLORE</h3>
+
+      <a href="index.html#home">
+        Home
+      </a>
+
+      <a href="index.html#about">
+        About
+      </a>
+
+      <a href="index.html#services">
+        Services
+      </a>
+
+      <a href="portfolio.html">
+        Portfolio
+      </a>
+
+      <a href="index.html#testimonials">
+        Testimonials
+      </a>
+
+      <a href="index.html#faq">
+        FAQ
+      </a>
+
+      <a href="index.html#contact">
+        Contact
+      </a>
+
+    </div>
+
+
+
+    <!-- Services -->
+
+    <div class="footer-column">
+
+      <h3>SERVICES</h3>
+
+      <a href="index.html#services">
+        Writing
+      </a>
+
+      <a href="index.html#services">
+        Editing
+      </a>
+
+      <a href="index.html#services">
+        Beta Reading
+      </a>
+
+      <a href="index.html#services">
+        Proofreading
+      </a>
+
+      <a href="index.html#services">
+        Publishing
+      </a>
+
+    </div>
+
+
+
+    <!-- Contact -->
+
+    <div class="footer-column footer-contact">
+
+      <h3>GET IN TOUCH</h3>
+
+
+      <p>
+        Have a project in mind?
+        Let's talk about your book.
+      </p>
+
+
+      <a
+        href="mailto:theauthorsfoundry@gmail.com"
+        class="footer-email-button"
+      >
+
+        EMAIL US
+
+        <span>→</span>
+
+      </a>
+
+
+      <p class="footer-email-address">
+        theauthorsfoundry@gmail.com
+      </p>
+
+    </div>
+
+  </div>
+
+
+
+  <!-- Footer Bottom -->
+
+  <div class="footer-bottom">
+
+    <p>
+      © 2026 The Author's Foundry.
+      All rights reserved.
+    </p>
+
+
+    <div class="footer-socials">
+
+      <a
+        href="https://www.instagram.com/theauthorsfoundry?igsi=NDVrY3h2dGNrMXVs"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Instagram"
+      >
+        Instagram
+      </a>
+
+
+      <a
+        href="https://www.facebook.com/profile.php?id=61575190373914"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Facebook"
+      >
+        Facebook
+      </a>
+
+
+      <a
+        href="https://www.threads.com/@theauthorsfoundry"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Threads"
+      >
+        Threads
+      </a>
+
+
+      <a
+        href="https://x.com/authorsfoundry"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="X / Twitter"
+      >
+        X / Twitter
+      </a>
+
+    </div>
+
+  </div>
+
+</footer>
+    <script>
+      const faqQuestions = document.querySelectorAll(".faq-question");
+
+      faqQuestions.forEach(function (question) {
+        question.addEventListener("click", function () {
+          const currentItem = question.closest(".faq-item");
+
+          document.querySelectorAll(".faq-item").forEach(function (item) {
+            if (item !== currentItem) {
+              item.classList.remove("active");
+            }
+          });
+
+          currentItem.classList.toggle("active");
+        });
+      });
+    </script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
